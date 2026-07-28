@@ -67,8 +67,14 @@ app.post('/bot-response', async (req, res) => {
             error = true;
         }
 
+        await db.none ('INSERT INTO responses (id, bot_response) VALUES ($1, $2)', [id, response.choices[0].message.content]); //save response to db
+        res.render('pages/index', { error: false, message: response.choices[0].message.content });
+
     } catch (error){
       res.render('pages/index', { error: true, message: 'Sorry girl, can\'t talk right now. Catch me l8r!' });
     }
 });
 
+app.post('/appear-on-page', async(req, res) => {
+    
+});
