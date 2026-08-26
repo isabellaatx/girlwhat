@@ -134,3 +134,9 @@ function displayMessage(text, type) {
   chatArea.appendChild(msg);
   chatArea.scrollTop = chatArea.scrollHeight; //auto-scroll
 }
+
+document.getElementById("userInput").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    getValue();
+  }
+});
