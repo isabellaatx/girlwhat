@@ -84,7 +84,7 @@ let conversation = [];
 
 //server code for hiding api, *use vercel
 async function getBotResponse(userInput) {
-  const response = await fetch("https://ihaventmadethisrouteyet.com/bot-response", {
+  const response = await fetch("/api/bot-response", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userInput : userInput }),
